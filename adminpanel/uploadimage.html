@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Upload Images</title>
+    <link rel="stylesheet" href="uploadimage.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .sidebar {
+            width: 200px;
+            position: fixed;
+            height: 100%;
+            background-color: #333;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            color: #e91e63;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #e91e63;
+        }
+
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+            background-color: #2a2a2a;
+            min-height: 100vh;
+        }
+
+        .main-content h1 {
+            text-align: center;
+            font-size: 28px;
+            color: #e91e63;
+        }
+
+        .upload-section {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .upload-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .upload-section input[type="file"] {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: hsl(0, 8%, 72%); 
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .upload-section input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #e91e63;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .upload-section input[type="submit"]:hover {
+            background-color: #d81b60;
+        }
+
+        .upload-section .grand-span {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .upload-section .child-span {
+            margin: 10px;
+        }
+
+        .upload-section .rd-label {
+            margin-right: 5px;
+            color: #fff;
+        }
+
+        #uploaded-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #selectedImage {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="uploadimage.html">Upload New Images</a></li>
+            <li><a href="delete_image.php">Delete Images</a></li>
+            <li><a href="#">Manage Enquiries</a></li>
+            <li><a href="#">Edit Profile</a></li>
+            <li><a href="#">Manage Accounts</a></li>
+            <li><a href="#">Manage Testimonials</a></li>
+            <li><a href="#">Manage Contacts</a></li>
+            <li><a href="#">Manage Packages</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1>Upload an Image</h1> 
+
+        <div class="upload-section">
+            <form action="uploadimage.php" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" id="image" accept="image/*">
+                
+                <!-- Radio Buttons for Image Type -->
+                <div class="grand-span">
+                    <span class="child-span">
+                        <label for="rdWedding" class="rd-label">Wedding</label>
+                        <input type="radio" name="imgType" id="rdWedding" value="Wedding">
+                    </span>
+                    <span class="child-span">
+                        <label for="rdLifestyle" class="rd-label">Lifestyle</label>
+                        <input type="radio" name="imgType" id="rdLifestyle" value="Lifestyle">    
+                    </span>
+                    <span class="child-span">
+                        <label for="rdModels" class="rd-label">Models</label>
+                        <input type="radio" name="imgType" id="rdModels" value="Models">
+                    </span>
+                    <span class="child-span">
+                        <label for="rdFashion" class="rd-label">Fashion</label>
+                        <input type="radio" name="imgType" id="rdFashion" value="Fashion">
+                    </span>
+                    <span class="child-span">
+                        <label for="rdNatural" class="rd-label">Natural</label>
+                        <input type="radio" name="imgType" id="rdNatural" value="Natural">
+                    </span>
+                </div>
+
+                <input type="submit" value="Upload Image" name="submit">
+            </form>
+        </div>
+
+        <div id="uploaded-image">
+            <!-- Uploaded image will be displayed here after successful upload -->
+        </div>
+
+        <img src="" alt="Selected Image will be displayed here" id="selectedImage">
+    </div>
+
+    <script src="uploadimage.js"></script>
+</body>
+</html>
+

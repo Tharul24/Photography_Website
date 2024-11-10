@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Photography Site - Booking Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <div class="form-container">
+        <img src = "images/about-img.jpg" alt = "photographer img">
+        <h1>Booking Form</h1>
+        <form action="booking.php" method="post" class="form-control">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="tel">Telephone Number</label>
+                <input type="tel" name="tel" id="tel" maxlength="12" required>
+            </div>
+
+            <div class="input-group">
+                <label for="function">Function</label>
+                <input type="text" name="function" id="function" required>
+            </div>
+
+            <div class="input-group">
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+
+            <div class="input-group">
+                <label for="stime">Start Time</label>
+                <input type="time" name="stime" id="stime" required>
+            </div>
+
+            <div class="input-group">
+                <label for="etime">End Time</label>
+                <input type="time" name="etime" id="etime" required>
+            </div>
+
+            <div class="input-group">
+                <label for="location">Location</label>
+                <input type="text" name="location" id="location" required>
+            </div>
+
+            <div class="input-group">
+                <input type="submit" name="submit" value="Submit">
+                <input type="reset" name="reset" value="Reset">
+            </div>
+        </form>
+        <p><a href="index.html">Home Page</a></p>
+    </div>
+</body>
+</html>

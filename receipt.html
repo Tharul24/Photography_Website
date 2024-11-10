@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Payment Receipt</title>
+    <link rel="stylesheet" href="receipt.css">
+
+</head>
+<body>
+    <h1>Upload Your Payment Receipt</h1>&nbsp; &nbsp;
+    <form action="receiptupload.php" method="post" enctype="multipart/form-data">
+        First Name: <input type="text" name="first_name" required><br>
+        Last Name: <input type="text" name="last_name" required><br>
+        Client Email: <input type="email" name="email" required><br>
+        Client Contact: <input type="text" name="contact" required><br>
+        Event Details: <textarea name="details" required></textarea><br>
+        Payment ID: <input type="text" name="payment_id" required><br>
+        Select Payment Receipt to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload" required><br><br>
+        <center><input type="submit" value="Upload" name="submit"></center>
+    </form>
+</body>
+</html>

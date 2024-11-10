@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Remove Images</title>
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .sidebar {
+            width: 200px;
+            position: fixed;
+            height: 100%;
+            background-color: #333;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            color: #e91e63;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #e91e63;
+        }
+
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #ff6f61;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Image Removal Form Styles */
+        .removal-form-container {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .removal-form-container select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #444;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .removal-form-container button {
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .removal-form-container button:hover {
+            background-color: #d81b60;
+        }
+
+        .removal-form-container img {
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar ul {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="uploadimage.html">Upload New Images</a></li>
+            <li><a href="delete-image.html">Delete Images</a></li>
+            <li><a href="#">Manage Enquiries</a></li>
+            <li><a href="#">Edit Profile</a></li>
+            <li><a href="#">Manage Accounts</a></li>
+            <li><a href="#">Manage Testimonials</a></li>
+            <li><a href="#">Manage Contacts</a></li>
+            <li><a href="#">Manage Packages</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1>Remove Images from Gallery</h1>
+        <div class="removal-form-container">
+            <form action="delete_image.php" method="post" onsubmit="return verifyImageDeleter()">
+                <input type="hidden" name="methodName" value="deleteImg">
+                <input type="hidden" name="username" value="admin">
+                
+                <label for="selectImagetoDelete">Select Image to Delete:</label>
+                <select name="selectImagetoDelete" id="selectImagetoDelete" size="10">
+                    <option value="images/01.jpg">images/01.jpg</option>
+                    <option value="images/02.jpg">images/02.jpg</option>
+                    <option value="images/03.jpg">images/03.jpg</option>
+                    <option value="images/04.jpg">images/04.jpg</option>
+                    <option value="images/05.jpg">images/05.jpg</option>
+                    <option value="images/06.jpg">images/06.jpg</option>
+                    <option value="images/7.jpeg">images/7.jpeg</option>
+                    <option value="images/8.jpg">images/8.jpg</option>
+                    <option value="images/9.png">images/9.png</option>
+                    <option value="images/10.jpg">images/10.png</option>
+                    <option value="images/11.jpg">images/11.png</option>
+                    <option value="images/12.jpg">images/12.jpg</option>
+                    <option value="images/13.jpg">images/13.jpg</option>
+                    <option value="images/14.jpg">images/14.jpg</option>
+                    <option value="images/15.jpg">images/15.jpg</option>
+                    <option value="images/16.jpg">images/16.jpg</option>
+                    <option value="images/17.jpg">images/17.jpg</option>
+                    <option value="images/18.jpg">images/18.jpg</option>
+                    <option value="images/19.png">images/19.png</option>
+                    <option value="images/20.jpg">images/20.jpg</option>
+                    <option value="images/21.jpg">images/21.jpg</option>
+                    <option value="images/22.jpg">images/22.jpg</option>
+                    <option value="images/23.jpg">images/23.jpg</option>
+                    <option value="images/24.jpg">images/24.jpg</option>
+                    <option value="images/a1.jpg">images/a1.jpg</option>
+                    <option value="images/a6.jpg">images/a6.jpg</option>
+                    <option value="images/a7.jpg">images/a7.jpg</option>
+                    <option value="images/a8.jpg">images/a8.jpg</option>
+                    <option value="images/a9.jpg">images/a9.jpg</option>
+                    <option value="images/a11.jpg">images/a11.jpg</option>
+                    <option value="images/a12.png">images/a12.jpg</option>
+                    <option value="images/a13.jpg">images/a13.jpg</option>
+                    <option value="images/a14.jpg">images/a14.jpg</option>
+                    <option value="images/about-img.jpg">images/about-img.jpg</option>
+                    <option value="images/blog.jpg">images/blog.jpg</option>
+                    <option value="images/blog1.jpg">images/blog1.jpg</option>
+                    <option value="images/blog2.jpg">images/blog2.jpg</option>
+                    <option value="images/blog3.jpg">images/blog3.jpg</option>
+                    <option value="images/blog4.jpg">images/blog4.jpg</option>
+                    <option value="images/blog5.jpg">images/blog5.jpg</option>
+                    <option value="images/blog6.jpg">images/blog6.jpg</option>
+                    <option value="images/client-1.jpg">images/client-1.jpg</option>
+                    <option value="images/client-2.jpg">images/client-2.jpg</option>
+                    <option value="images/client-3.jpg">images/client-3.jpg</option>
+                    <option value="images/fishmonger.jpeg">images/fishmonger.jpeg</option>
+                    <option value="images/gallery1.jpg">images/gallery1.jpg</option>
+                    <option value="images/gallery2.jpg">images/gallery2.jpg</option>
+                    <option value="images/gallery3.jpg">images/gallery3.jpg</option>
+                    <option value="images/gallery4.jpg">images/gallery4.jpg</option>
+                    <option value="images/gallery5.jpg">images/gallery5.jpg</option>
+                    <option value="images/gallery6.jpg">images/gallery6.jpg</option>
+                    <option value="images/gallery7.jpg">images/gallery7.jpg</option>
+                    <option value="images/gallery8.jpg">images/gallery8.jpg</option>
+                    <option value="images/gallery9.jpg">images/gallery9.jpg</option>
+                    <option value="images/header.jpg">images/header.jpg</option>
+                    <option value="images/header-1.jpg">images/header-1.jpg</option>
+                    <option value="images/image-1.jpg">images/image-1.jpg</option>
+                    <option value="images/image-2.jpg">images/image-2.jpg</option>
+                    <option value="images/image-3.jpg">images/image-3.jpg</option>
+                    <option value="images/image-4.jpg">images/image-4.jpg</option>
+                    <option value="images/image-5.jpg">images/image-5.jpg</option>
+                    <option value="images/image-6.jpg">images/image-6.jpg</option>
+                    <option value="images/image-7.jpg">images/image-7.jpg</option>
+                    <option value="images/image-8.jpg">images/image-8.jpg</option>
+                    <option value="images/insta-1.jpg">images/insta-1.jpg</option>
+                    <option value="images/insta-2.jpg">images/insta-2.jpg</option>
+                    <option value="images/insta-3.jpg">images/insta-3.jpg</option>
+                    <option value="images/insta-4.jpg">images/insta-4.jpg</option>
+                    <option value="images/popular-1.jpg">images/popular-1.jpg</option>
+                    <option value="images/popular-2.jpg">images/popular-2.jpg</option>
+                    <option value="images/popular-3.jpg">images/popular-3.jpg</option>
+                    <option value="images/popular-4.jpg">images/popular-4.jpg</option>
+                    <option value="images/project-1.jpg">images/project-1.jpg</option>
+                    <option value="images/project-2.jpg">images/project-2.jpg</option>
+                    <option value="images/portfolio-1.jpg">images/portfolio-1.jpg</option>
+                    <option value="images/portfolio-2.jpg">images/portfolio-2.jpg</option>
+                    <option value="images/portfolio-3.jpg">images/portfolio-3.jpg</option>
+                    <!-- Add more options here as needed -->
+                </select>
+                
+                <button type="submit">Delete Selected Image</button>
+                
+                <img id="previewImage" alt="Preview Image">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const selectElement = document.getElementById('selectImagetoDelete');
+        const previewImage = document.getElementById('previewImage');
+
+        selectElement.addEventListener('change', function() {
+            const selectedImage = this.value;
+            if (selectedImage) {
+                previewImage.src = selectedImage;
+                previewImage.style.display = 'block';
+            } else {
+                previewImage.style.display = 'none';
+            }
+        });
+
+        function verifyImageDeleter() {
+            return confirm('Are you sure you want to delete this image?');
+        }
+    </script>
+</body>
+</html>

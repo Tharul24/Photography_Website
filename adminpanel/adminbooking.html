@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Enquiry</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Create Enquiry</h1>
+        <form action="booking.php" method="post" class="form-control">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required placeholder="Customer Name">
+            </div>
+
+            <div class="input-group">
+                <label for="e-mail">E-mail</label>
+                <input type="email" name="e-mail" id="e-mail" required placeholder="Customer Email Address">
+            </div>
+
+            <div class="input-group">
+                <label for="tel">Contact No</label>
+                <input type="tel" name="tel" id="tel" maxlength="10" required placeholder="Contact Number">
+            </div>
+
+            <div class="input-group">
+                <label for="spjob">Type of Job</label>
+                <span class="spJob">
+                    <input type="radio" name="jtype" id="rdWedding" class="rdJob" value="Wedding" checked>
+                    <label for="rdWedding" class="lblJob">Wedding</label>
+                </span>
+                <span class="spJob">
+                    <input type="radio" name="jtype" id="rdPortrait" class="rdJob" value="Portrait">
+                    <label for="rdPortrait" class="lblJob">Portrait</label>
+                </span>
+                <span class="spJob">
+                    <input type="radio" name="jtype" id="rdEvent" class="rdJob" value="Event">
+                    <label for="rdEvent" class="lblJob">Event</label>
+                </span>
+            </div>
+
+            <div class="input-group">
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+
+            <div class="input-group">
+                <label for="stime">Time</label>
+                <input type="time" name="stime" id="stime" required>
+            </div>
+
+            <div class="input-group">
+                <label for="package">Package</label>
+                <select name="selPackage" id="selPackage" class="userSelect" required>
+                    <option value="Basic">Basic Package</option>
+                    <option value="Standard">Standard Package</option>
+                    <option value="Extended">Extended Package</option>
+                    <option value="Ultimate">Ultimate Package</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="location">Location [URL]</label>
+                <input type="text" name="location" id="location" required placeholder="URL of Google Maps Location (Applicable for Weddings/Events)">
+            </div>
+
+            <div class="input-group">
+                <input type="submit" name="submit" value="Submit">
+                <input type="reset" name="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
